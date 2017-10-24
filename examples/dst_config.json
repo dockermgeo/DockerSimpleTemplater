@@ -1,0 +1,16 @@
+[
+  {
+    "template": "/src/index.tpl.html",
+    "target": "/usr/share/nginx/html/index.html",
+    "set": [
+      "HTML_TITLE", "HTML_SUBTITLE"
+    ]
+  },
+  {
+    "template": "/src/index.tpl.html",
+    "target": "/usr/share/nginx/html/index2.html",
+    "set": [
+      "HTML_TITLE", "HTML_SUBTITLE"
+    ]
+  }
+]

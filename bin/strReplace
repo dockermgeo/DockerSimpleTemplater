@@ -1,0 +1,14 @@
+#!/bin/sh
+
+replace () {
+                #echo "sed -i \"s/%%${1}%%/${2}/g\" ${3}"
+                var=$(sed -e "s/%%${1}%%/${2}/g" ${3})
+                echo $var>${3}
+}
+
+##
+str_find=${1}
+str_repl=${2}
+file_replace=${3}
+##
+replace "${str_find}" "${str_repl}" "${file_replace}"

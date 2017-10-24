@@ -26,3 +26,9 @@ JSON
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >
 ```
 
+### RUN
+```
+ /usr/local/bin/DockerSimpleTemplater <jsonfile>
+```
+
+

@@ -26,9 +26,15 @@ JSON
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >
 ```
 
-### RUN
+### Using
+
+1. Define Jsonfile
+2. Bind Templates 
+3. Call docker-templater
+
+#### Command:
 ```
- /usr/local/bin/DockerSimpleTemplater <jsonfile>
+ /usr/local/bin/docker-templater <jsonfile>
 ```
 
 

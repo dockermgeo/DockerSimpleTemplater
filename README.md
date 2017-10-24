@@ -7,6 +7,13 @@ cd DockerSimpleTemplater
 make install
 ```
 
+#### Dependencies
+* jq
+
+Using on
+*  Ubuntu: apt get install -yq
+*  Alpine: apk add -yq
+
 
 ### Using
 

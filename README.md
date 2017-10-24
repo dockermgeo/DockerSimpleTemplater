@@ -8,6 +8,18 @@ make install
 ```
 
 
+### Using
+
+1. Define Jsonfile
+2. Bind Templates 
+3. Call docker-templater
+
+#### Command:
+```
+ /usr/local/bin/docker-templater <jsonfile>
+```
+
+
 ### Define Sets/Configurations
 JSON
 ```
@@ -25,16 +37,3 @@ JSON
 ```
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >
 ```
-
-### Using
-
-1. Define Jsonfile
-2. Bind Templates 
-3. Call docker-templater
-
-#### Command:
-```
- /usr/local/bin/docker-templater <jsonfile>
-```
-
-

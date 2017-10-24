@@ -45,6 +45,6 @@ JSON
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >
 ```
 
-### Docker special
+### Docker integration on boot
 You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
 More Info to [DockerBootstrap](https://github.com/git-mgeo/DockerBootstrap).

@@ -2,7 +2,7 @@
 
 ### Installation
 ```
-git clone https://github.com/git-mgeo/DockerSimpleTemplater
+git clone https://github.com/dockermgeo/DockerSimpleTemplater
 cd DockerSimpleTemplater
 make
 ```
@@ -47,12 +47,12 @@ JSON
 
 ### Docker integration on boot
 You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
-More Info to [DockerBootstrap](https://github.com/git-mgeo/DockerBootstrap).
+More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 
 #### Snipplet from a Dockerfile
 ```
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
-    git clone https://github.com/git-mgeo/DockerSimpleTemplater && \
+    git clone https://github.com/dockermgeo/DockerSimpleTemplater && \
     cd DockerSimpleTemplater && make && \
     mv /usr/local/bin/docker-templater /etc/docker/up.d/010_docker-templater.sh
 

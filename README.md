@@ -47,6 +47,6 @@ JSON
 
 ### Docker special
 You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
-More Info to DockerBootstrap [1].
+More Info to [DockerBootstrap] [1].
 
 [1] https://github.com/git-mgeo/DockerBootstrap

@@ -56,5 +56,7 @@ RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     git clone https://github.com/git-mgeo/DockerSimpleTemplater && \
     cd DockerSimpleTemplater && make && \
     cp /usr/local/bin/docker-templater /etc/docker/up.d/010_docker-templater.sh
+
+#you can add json also as volume -v /tmp/bla.json:/dst-config.json
 COPY src/app_variables.json /dst-config.json
 ```

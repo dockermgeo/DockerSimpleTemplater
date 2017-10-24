@@ -10,7 +10,7 @@ make install
 #### Dependencies
 * jq
 
-Using on
+on
 *  Ubuntu: apt get install -yq
 *  Alpine: apk add -yq
 
@@ -44,3 +44,9 @@ JSON
 ```
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >
 ```
+
+### Docker special
+You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
+More Info to DockerBootstrap [1].
+
+[1] https://github.com/git-mgeo/DockerBootstrap

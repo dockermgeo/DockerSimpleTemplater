@@ -49,7 +49,7 @@ JSON
 You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
 More Info to [DockerBootstrap](https://github.com/git-mgeo/DockerBootstrap).
 
-Snipplet from a Dockerfile
+#### Snipplet from a Dockerfile
 ```
 
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \

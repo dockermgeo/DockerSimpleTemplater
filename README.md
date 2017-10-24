@@ -54,5 +54,6 @@ Snipplet from a Dockerfile
 
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     git clone https://github.com/git-mgeo/DockerSimpleTemplater && \
-    cd DockerSimpleTemplater && make
+    cd DockerSimpleTemplater && make && \
+    cp /usr/local/bin/docker-templater /etc/docker/up.d/010_docker-templater.sh
 ```

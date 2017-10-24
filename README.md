@@ -48,3 +48,11 @@ JSON
 ### Docker integration on boot
 You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
 More Info to [DockerBootstrap](https://github.com/git-mgeo/DockerBootstrap).
+
+Snipplet from a Dockerfile
+```
+
+RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
+    git clone https://github.com/git-mgeo/DockerSimpleTemplater && \
+    cd DockerSimpleTemplater && make
+```

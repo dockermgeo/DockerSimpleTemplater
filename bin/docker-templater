@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DST_CONFIG_JSON=${1:-/dst_config.json}
+DST_CONFIG_JSON=${1:-"/dst_config.json"}
 for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
     _jq() {
      echo ${row} | base64 --decode | jq -r ${1}

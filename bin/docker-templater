@@ -13,7 +13,7 @@ for row in $(cat "${DST_CONFIG_JSON}" | jq -r '.[] | @base64'); do
    cp -f ${template} ${target}
 
    for set in $setLIST; do
-     if [ -z ${!set} ]; then
+     if [ "${!set}" = "" ]; then
        echo "[ERROR] - NO VALUE for $set"
        exit 1;
      fi

@@ -56,6 +56,6 @@ RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     cd DockerSimpleTemplater && make && \
     mv /usr/local/bin/docker-simple-templater /etc/docker/up.d/010_docker-simple-templater.sh
 
-#you can add json also as volume -v /tmp/myprojct-sets.json:/template.json
+#you can add json also as volume -v /tmp/myproject-app_template.json:/template.json
 COPY src/app_template.json /template.json
 ```

@@ -54,7 +54,7 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     git clone https://github.com/dockermgeo/DockerSimpleTemplater && \
     cd DockerSimpleTemplater && make && \
-    mv /usr/local/bin/docker-templater /etc/docker/up.d/010_docker-simple-templater.sh
+    mv /usr/local/bin/docker-simple-templater /etc/docker/up.d/010_docker-simple-templater.sh
 
 #you can add json also as volume -v /tmp/myprojct-sets.json:/template.json
 COPY src/app_template.json /template.json

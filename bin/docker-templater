@@ -1,0 +1,22 @@
+#!/bin/bash
+
+DST_CONFIG_JSON=${DST_CONFIG_JSON:-"/dst-config.json"}
+for row in $(cat "${DST_CONFIG_JSON}" | jq -r '.[] | @base64'); do
+    _jq() {
+     echo ${row} | base64 --decode | jq -r ${1}
+    }
+   COUNT=$(($COUNT+1))
+   template=$(_jq '.template')
+   target=$(_jq '.target')
+   setLIST=$(_jq '.set[]')
+
+   cp -f ${template} ${target}
+
+   for set in $setLIST; do
+     if [ "${!set}" = "" ]; then
+       echo "[ERROR] - NO VALUE for $set"
+       exit 1;
+     fi
+       strReplace "${set}" "${!set}" "${target}"
+   done
+done

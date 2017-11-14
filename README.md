@@ -18,7 +18,7 @@ on
 ### Using
 
 1. Define Jsonfile
-2. Bind Templates 
+2. Bind Templates
 3. Call docker-templater
 
 #### Command:
@@ -34,12 +34,16 @@ JSON
  {
    'template':'/src/index.tpl.html',
    'target':'/usr/share/nginx/html/index.html',
-   'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "ENV_PLACE" ]
+   'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "ENV_PLACE" ],
+   'keystore': {
+     'server_adress': 'redis:6379'
+     'group': 'de.cloud.key_value_group_id'
+   }
   },
   {....}
 ]
 ```
-
+- Wenn das Object keystore null ist, werden keine ENV-Variablen aus dem Keystore verwendet. D.h. alle nötigen ENVs aus set müssen von aussen beigesteuert werden.
 ### Template
 ```
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >

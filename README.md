@@ -62,6 +62,8 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 
 ![Architecture](docs/dst-architektur.png)
 
+-- ***A RedisDB-Dockerimage you'll find on Dockerhub: [dockermgeo/redisdb](dst-architektur)***
+
 #### Snipplet from a Dockerfile
 ```
 ENV REDIS_HOST 192.1.168.32

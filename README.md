@@ -18,7 +18,7 @@ on
 *  Alpine: apk add -yq
 
 
-### Using
+### Using Docker-Simple-Templater
 
 1. Define Jsonfile (Sets/Configurations)
 2. Bind Templates

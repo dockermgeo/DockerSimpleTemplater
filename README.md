@@ -64,6 +64,7 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 
 #### Snipplet from a Dockerfile
 ```
+ENV REDIS_HOST 192.1.168.32
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     git clone https://github.com/dockermgeo/DockerSimpleTemplater && \
     cd DockerSimpleTemplater && make && \

@@ -69,7 +69,7 @@ RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     mv /bin/docker-simple-templater /etc/docker/up.d/010_docker-simple-templater.sh
 
 # nexst: enabling loading from keystore
-RUN mv /bin/docker-env-redis /etc/docker/up.d/009_docker-keystore-loader.sh
+#RUN mv /bin/docker-env-redis /etc/docker/up.d/009_docker-keystore-loader.sh
 
 #you can add json also as volume -v /tmp/myproject-app_template.json:/template.json
 COPY src/app_template.json /template.json

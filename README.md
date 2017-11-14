@@ -38,12 +38,12 @@ JSON
    'template':'/src/index.tpl.html',
    'target':'/usr/share/nginx/html/index.html',
    'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "ENV_RUNPORT" ],
-   'keystoreid': 'de.cloud.key_value_group_id'
+   'keyqualifier': 'de.cloud.key_value_group_id'
   },
   {....}
 ]
 ```
-- If the Object keystore are not set, no connection will created to keystore. All ENV-Variables are null and must come from boot (composition).
+- If the Object keyqualifier are not set, no connection will created to keystore. All ENV-Variables are null and must come from boot (composition).
 - On Connection. All Env-Variables will load by syntax "groupid.varname".
 
 ```

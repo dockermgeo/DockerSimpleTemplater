@@ -44,7 +44,7 @@ JSON
 ]
 ```
 - Wenn das Object keystore null ist, werden keine ENV-Variablen aus dem Keystore verwendet. D.h. alle nötigen ENVs aus set müssen von aussen beigesteuert werden.
-- Ansonsten wird eine Variable nach <group>.<varname> aufgelöst. Beispiel:
+- Ansonsten wird eine Variable nach "groupid.varname" aufgelöst. Beispiel:
 ```
   #get de.cloud.your_product.your_env_variable
   get de.cloud.helloworldapp.http_run_port

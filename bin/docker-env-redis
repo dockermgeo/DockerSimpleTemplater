@@ -11,6 +11,6 @@ for row in $(cat "${DST_CONFIG_JSON}" | jq -r '.[] | @base64'); do
 
 
    for getel in $setLIST; do
-       echo $(redisclient get ${kvgroup}.${getel})
+       export ${!getel} $(redisclient get ${kvgroup}.${getel})
    done
 done

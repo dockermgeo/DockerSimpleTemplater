@@ -3,12 +3,15 @@ skinparam handwritten true
 
 node RedisDB
 interface RedisEnvBuilder
-actor BOOT
+actor OPS
+actor DEV
 node DockerSimpleTemplater
 
 
 RedisDB <-(0)-> RedisEnvBuilder:get("de.cloud.appname.DB_ADDRESS")
-DockerSimpleTemplater <- BOOT:" LOG_LEVEL"
+DockerSimpleTemplater <- OPS:" LOG_LEVEL"
+OPS <- DEV
+note top: need LOG_LEVEL & DB_ADDRESES
 RedisEnvBuilder <-> DockerSimpleTemplater:" DB_ADDRESS"
 note top: implements json and write files
 

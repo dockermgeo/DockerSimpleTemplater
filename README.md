@@ -20,7 +20,7 @@ on
 
 ### Using
 
-1. Define Jsonfile
+1. Define Jsonfile (Sets/Configurations)
 2. Bind Templates
 3. Call docker-templater
 
@@ -30,7 +30,7 @@ on
 ```
 
 
-### Define Sets/Configurations
+### Define JSON (Sets/Configurations)
 JSON
 ```
 [
@@ -50,7 +50,8 @@ JSON
 - **target**: Destination, in which Templatefile will copy and replaced all variables from set.
 
 
-### Template
+### Bind Template
+Edit your Templatefile and set Variablename between "%%" at start and end of targetposition.
 ```
  < h1 >Hallo %%ENV_FIRSTNAME%%!< /h1 >
 ```

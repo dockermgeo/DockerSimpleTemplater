@@ -43,10 +43,10 @@ JSON
   {....}
 ]
 ```
-- Wenn das Object keystore null ist, werden keine ENV-Variablen aus dem Keystore verwendet. D.h. alle nötigen ENVs aus set müssen von aussen beigesteuert werden.
-- Ansonsten wird eine Variable nach "groupid.varname" aufgelöst. Beispiel:
+- If the Object keystore are null, no connection will startet to keystore. All ENV-Variables must come from boot.
+- On Connection. All Env-Variables will load by syntax "groupid.varname".
+
 ```
-  #get de.cloud.your_product.your_env_variable
   get de.cloud.helloworldapp.ENV_RUNPORT
 ```
 

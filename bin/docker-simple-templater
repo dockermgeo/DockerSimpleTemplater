@@ -10,8 +10,10 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    target=$(_jq '.target')
    setLIST=$(_jq '.set[]')
 
+   # Copy Templatefile to Target
    cp -f ${template} ${target}
 
+   # Edit Templatefile and Set VAR_NAME on Placeholder
    for set in $setLIST; do
      if [ "${!set}" = "" ]; then
        echo "[ERROR] - NO VALUE for $set"

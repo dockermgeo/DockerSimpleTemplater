@@ -62,7 +62,6 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 
 ![Architecture](docs/dst-architektur.png)
 
-*A RedisDB-Dockerimage you'll find on Dockerhub: [dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)*
 
 #### Snipplet from a Dockerfile
 ```
@@ -77,3 +76,7 @@ RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
 
 #you can add json also as volume -v /tmp/myproject-app_template.json:/template.json
 COPY src/app_template.json /template.json
+
+
+#### Special Redis
+A RedisDB-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".

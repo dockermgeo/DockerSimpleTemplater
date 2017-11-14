@@ -37,7 +37,7 @@ JSON
  {
    'template':'/src/index.tpl.html',
    'target':'/usr/share/nginx/html/index.html',
-   'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "DB_PORT" ],
+   'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "DB_ADDRESS" ],
    'keyqualifier': 'de.cloud.key_value_group_id'
   },
   {....}

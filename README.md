@@ -43,6 +43,7 @@ JSON
   {....}
 ]
 ```
+- **OBJECT**: Docker-Simple-Templater works on each Object. You can define any...
 - **keyqualifier**: Group, Name or ID as PREFIX before variablename ("keyqualifier.varname"). Depends by keystores!
 - **set**: Set of needed variables
 - **template**: Templatefile

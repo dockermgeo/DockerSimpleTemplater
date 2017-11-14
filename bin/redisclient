@@ -130,7 +130,7 @@ function redis_set_array() {
 	done
 }
 
-while getopts g:s:r:P:H:p:d:ha opt; do
+while getopts get:g:set:s:r:P:H:p:d:ha opt; do
 	case $opt in
 		p)
 			REDIS_PW=${OPTARG}
@@ -144,6 +144,9 @@ while getopts g:s:r:P:H:p:d:ha opt; do
 		g)
 			REDIS_GET=${OPTARG}
 			;;
+    get)
+  		REDIS_GET=${OPTARG}
+  		;;
 		a)
 			REDIS_ARRAY=1
 			;;
@@ -153,13 +156,16 @@ while getopts g:s:r:P:H:p:d:ha opt; do
 		s)
 			REDIS_SET=${OPTARG}
 			;;
+    set)
+  		REDIS_SET=${OPTARG}
+  		;;
     d)
 			REDIS_DB=${OPTARG}
 			;;
 		h)
 			echo
 			echo USAGE:
-			echo "	$0 [-a] [-r <range>] [-s <var>] [-g <var>] [-p <password>] [-d <database_number>] [-H <hostname>] [-P <port>]"
+			echo "	$0 [-a] [-r <range>] [-s(et) <var>] [-g(et) <var>] [-p <password>] [-d <database_number>] [-H <hostname>] [-P <port>]"
 			echo
 			exit 1
 			;;

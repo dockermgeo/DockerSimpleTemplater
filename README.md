@@ -1,5 +1,8 @@
 # DockerSimpleTemplater
 
+Define needed Variables and replace Variables in Files on startup.
+Filling Variables can come from boot (composition) or automaticly from a Keystore as redis.
+
 ### Installation
 ```
 git clone https://github.com/dockermgeo/DockerSimpleTemplater
@@ -64,7 +67,9 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     git clone https://github.com/dockermgeo/DockerSimpleTemplater && \
     cd DockerSimpleTemplater && make && \
-    mv /usr/local/bin/docker-simple-templater /etc/docker/up.d/010_docker-simple-templater.sh
+    mv /bin/docker-env-redis /etc/docker/up.d/009_docker-keystore-loader.sh && \
+    mv /bin/docker-simple-templater /etc/docker/up.d/010_docker-simple-templater.sh
+
 
 #you can add json also as volume -v /tmp/myproject-app_template.json:/template.json
 COPY src/app_template.json /template.json

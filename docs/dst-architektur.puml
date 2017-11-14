@@ -1,14 +1,14 @@
 @startuml
 skinparam handwritten true
 
-node RedisDB
+database Redis
 interface RedisEnvBuilder
 actor OPS
 actor DEV
 node DockerSimpleTemplater
 
 
-RedisDB <-(0)-> RedisEnvBuilder:get("de.cloud.appname.DB_ADDRESS")
+Redis <-(0)-> RedisEnvBuilder:get("de.cloud.appname.DB_ADDRESS")
 DockerSimpleTemplater <- OPS:" LOG_LEVEL"
 OPS <- DEV
 note top: need LOG_LEVEL & DB_ADDRESES

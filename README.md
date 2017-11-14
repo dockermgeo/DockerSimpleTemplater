@@ -38,15 +38,12 @@ JSON
    'template':'/src/index.tpl.html',
    'target':'/usr/share/nginx/html/index.html',
    'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "ENV_RUNPORT" ],
-   'keystore': {
-     'server_adress': 'redis:6379'
-     'group': 'de.cloud.key_value_group_id'
-   }
+   'keystoreid': 'de.cloud.key_value_group_id'
   },
   {....}
 ]
 ```
-- If the Object keystore are null, no connection will startet to keystore. All ENV-Variables must come from boot.
+- If the Object keystore are not set, no connection will created to keystore. All ENV-Variables are null and must come from boot (composition).
 - On Connection. All Env-Variables will load by syntax "groupid.varname".
 
 ```

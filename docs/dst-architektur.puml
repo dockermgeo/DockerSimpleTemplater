@@ -10,7 +10,7 @@ node DockerSimpleTemplater
 
 Redis <-(0)-> RedisEnvBuilder:get("de.cloud.appname.DB_ADDRESS")
 DockerSimpleTemplater <- OPS:" LOG_LEVEL"
-OPS <- DEV
+OPS <- DEV:"template.json"
 note top: need LOG_LEVEL & DB_ADDRESES
 RedisEnvBuilder <-> DockerSimpleTemplater:" DB_ADDRESS"
 note top: implements json and write files

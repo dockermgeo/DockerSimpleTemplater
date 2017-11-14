@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DST_CONFIG_JSON=${DST_CONFIG_JSON:-"/template.json"}
-for row in $(cat "${DST_CONFIG_JSON}" | jq -r '.[] | @base64'); do
+F_JSON=${TEMPLATE_JSON:-"/template.json"}
+for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
     _jq() {
      echo ${row} | base64 --decode | jq -r ${1}
     }

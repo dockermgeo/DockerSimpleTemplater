@@ -1,16 +1,19 @@
 #!/bin/bash
 
-DST_CONFIG_JSON=${DST_CONFIG_JSON:-"/template.json"}
-for row in $(cat "${DST_CONFIG_JSON}" | jq -r '.[] | @base64'); do
+F_JSON=${TEMPLATE_JSON:-"/template.json"}
+for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
     _jq() {
      echo ${row} | base64 --decode | jq -r ${1}
     }
    COUNT=$(($COUNT+1))
    kvgroup=$(_jq '.keyqualifier')
    setLIST=$(_jq '.set[]')
-
-
-   for getel in $setLIST; do
+  #
+  # Get from Keystore and exporting
+  # VAR_NAME=$VAR_NAME
+  #
+  for getel in $setLIST; do
        export ${!getel} $(redisclient get ${kvgroup}.${getel})
-   done
+  done
+
 done

@@ -43,14 +43,11 @@ JSON
   {....}
 ]
 ```
-- **keyqualifier**: Group, Name or ID as PREFIX before variablename ("keyqualifier.varname").
+- **keyqualifier**: Group, Name or ID as PREFIX before variablename ("keyqualifier.varname"). Depends by keystores!
 - **set**: Set of needed variables
 - **template**: Templatefile
 - **target**: Destination, in which Templatefile will copy and replaced all variables from set.
 
-```
-  get de.cloud.helloworldapp.ENV_RUNPORT
-```
 
 ### Template
 ```
@@ -76,4 +73,3 @@ RUN mv /bin/docker-env-redis /etc/docker/up.d/009_docker-keystore-loader.sh
 
 #you can add json also as volume -v /tmp/myproject-app_template.json:/template.json
 COPY src/app_template.json /template.json
-```

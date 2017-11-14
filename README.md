@@ -34,7 +34,7 @@ JSON
  {
    'template':'/src/index.tpl.html',
    'target':'/usr/share/nginx/html/index.html',
-   'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "ENV_PLACE" ],
+   'set':[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "ENV_RUNPORT" ],
    'keystore': {
      'server_adress': 'redis:6379'
      'group': 'de.cloud.key_value_group_id'
@@ -47,7 +47,7 @@ JSON
 - Ansonsten wird eine Variable nach "groupid.varname" aufgelöst. Beispiel:
 ```
   #get de.cloud.your_product.your_env_variable
-  get de.cloud.helloworldapp.http_run_port
+  get de.cloud.helloworldapp.ENV_RUNPORT
 ```
 
 ### Template

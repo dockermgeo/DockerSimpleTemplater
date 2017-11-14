@@ -7,9 +7,9 @@ actor BOOT
 node DockerSimpleTemplater
 
 
-RedisDB <--> RedisEnvBuilder:get("de.cloud.appname.DB_PORT")
+RedisDB <-(0)-> RedisEnvBuilder:get("de.cloud.appname.DB_PORT")
 DockerSimpleTemplater <- BOOT:" LOG_LEVEL"
-RedisEnvBuilder - DockerSimpleTemplater:" ENV_EXT_PORT"
+RedisEnvBuilder <-> DockerSimpleTemplater:" DB_PORT"
 note top: implements json and write files
 
 

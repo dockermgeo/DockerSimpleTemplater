@@ -78,5 +78,5 @@ RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
 COPY src/app_template.json /template.json
 ```
 
-#### Special Redis
+### Special Redis
 A RedisDB-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".

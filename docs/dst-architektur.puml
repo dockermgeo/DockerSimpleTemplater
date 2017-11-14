@@ -1,0 +1,16 @@
+@startuml
+skinparam handwritten true
+
+node RedisDB
+interface RedisEnvBuilder
+actor BOOT
+node DockerSimpleTemplater
+
+
+RedisDB <--> RedisEnvBuilder:"getEnv ({label: de.cloud.appname.DB_PORT})"
+DockerSimpleTemplater <- BOOT:" LOG_LEVEL"
+RedisEnvBuilder - DockerSimpleTemplater:" ENV_EXT_PORT"
+note top: implements json and write files
+
+
+@enduml

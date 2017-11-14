@@ -59,6 +59,8 @@ JSON
 You can use docker-templater on Dockerbootstrap. Put this File into DockerBootstrap -up.d/.
 More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 
+![Architecture](docs/dst-architektur.png)
+
 #### Snipplet from a Dockerfile
 ```
 ENV REDIS_HOST 192.1.168.32

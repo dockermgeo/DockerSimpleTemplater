@@ -1,6 +1,7 @@
 #!/bin/bash
 
 F_JSON=${TEMPLATE_JSON:-"/template.json"}
+REDIS_HOST=${REDIS_HOST:-"127.0.0.1"}
 for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
     _jq() {
      echo ${row} | base64 --decode | jq -r ${1}
@@ -13,7 +14,7 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
   # VAR_NAME=$VAR_NAME
   #
   for getel in $setLIST; do
-       export ${!getel} $(redisclient get ${kvgroup}.${getel})
+       export ${!getel} $(clireds $REDIS_HOST hget ${kvgroup} ${getel})
   done
 
 done

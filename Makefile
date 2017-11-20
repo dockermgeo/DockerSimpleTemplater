@@ -10,5 +10,5 @@ install:
 	cp $(DIR_PWD)/bin/* $(DIR_TARGET)/
 	cd $(DIR_BUILD)
 	git clone https://github.com/dockermgeo/CliReds
-	mv ${DIR_BUILD}/tmp/DockerSimpleTemplater/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds
+	mv ${DIR_BUILD}/DockerSimpleTemplater/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds
 	rm -Rf ${DIR_BUILD)}/DockerSimpleTemplater

@@ -7,7 +7,7 @@ DIR_PWD=$(shell pwd)
 DIR_BUILD=/tmp
 
 install:
-	cp $(DIR_PWD)/scripts/* $(DIR_TARGET)/
+	cp $(DIR_PWD)/shell/* $(DIR_TARGET)/
 	cd $(DIR_BUILD)
 	git clone https://github.com/dockermgeo/CliReds
 	mv ${DIR_BUILD}/DockerSimpleTemplater/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds

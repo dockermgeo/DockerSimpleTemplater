@@ -12,3 +12,4 @@ install:
 	git clone https://github.com/dockermgeo/CliReds
 	$(mv ${DIR_BUILD}/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds)
 	rm -Rf ${DIR_BUILD)}/CliReds
+	rm -Rf ${DIR_PWD}

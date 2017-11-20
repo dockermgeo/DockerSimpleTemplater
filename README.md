@@ -67,12 +67,10 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 ```
 RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
     git clone https://github.com/dockermgeo/DockerSimpleTemplater && \
-    cd DockerSimpleTemplater && make && \
-    mv /bin/docker-simple-templater /etc/docker/up.d/010_docker-simple-templater.sh
+    cd DockerSimpleTemplater && make install 
 
 # next: enabling loading from keystore
 #ENV REDIS_HOST 192.1.168.32
-#RUN mv /bin/docker-env-redis /etc/docker/up.d/009_docker-keystore-loader.sh
 
 #you can add json also as volume -v /tmp/myproject-app_template.json:/template.json
 COPY src/app_template.json /template.json

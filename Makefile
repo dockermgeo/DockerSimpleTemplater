@@ -4,12 +4,11 @@
 #
 DIR_TARGET=/usr/local/bin
 DIR_PWD=$(shell pwd)
-DIR_BUILD=$(DIR_PWD)/.tmp
+DIR_BUILD=/tmp
 
 install:
 	cp $(DIR_PWD)/bin/* $(DIR_TARGET)/
-	mkdir -p $(DIR_BUILD)
 	cd $(DIR_BUILD)
 	git clone https://github.com/dockermgeo/CliReds
-	mv $(DIR_BUILD)/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds
-	rm -Rf $(DIR_BUILD)
+	$(mv ${DIR_BUILD}/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds)
+	rm -Rf ${DIR_BUILD)}/CliReds

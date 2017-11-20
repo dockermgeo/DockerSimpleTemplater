@@ -1,11 +1,15 @@
-TARGET=/usr/local/bin
-PWD=$(shell pwd)
+##
+# Make a Simpleparser for docker
+# Included RedisClient *redscli*
+#
+DIR_TARGET=/usr/local/bin
+DIR_PWD=$(shell pwd)
+DIR_BUILD=$(DIR_PWD)/.tmp
 
 install:
-	cp $(PWD)/bin/* $(TARGET)/
-
-install_clireds:
-	$(cd /tmp)
-	$(git clone https://github.com/dockermgeo/CliReds builds/clireds-Linux)
-	$(mv /tmp/builds/cliredis ${TARGET}/)
-	$(rm -Rf /tmp/builds)
+	cp $(DIR_PWD)/bin/* $(DIR_TARGET)/
+	mkdir -p $(DIR_BUILD)
+	cd $(DIR_BUILD)
+	git clone https://github.com/dockermgeo/CliReds
+	mv $(DIR_BUILD)/CliReds/builds/clireds-Linux ${DIR_TARGET}/clireds
+	rm -Rf $(DIR_BUILD)

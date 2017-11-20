@@ -1,20 +1,33 @@
 #!/bin/bash
 
+. /etc/docker/modules/outstream.sh
 F_JSON=${TEMPLATE_JSON:-"/template.json"}
-REDIS_HOST=${REDIS_HOST:-"127.0.0.1"}
 for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
     _jq() {
      echo ${row} | base64 --decode | jq -r ${1}
     }
    COUNT=$(($COUNT+1))
-   kvgroup=$(_jq '.keyqualifier')
+   template=$(_jq '.template')
+   target=$(_jq '.target')
    setLIST=$(_jq '.set[]')
-  #
-  # Get from Keystore and exporting
-  # VAR_NAME=$VAR_NAME
-  #
-  for getel in $setLIST; do
-       export ${!getel} $(clireds $REDIS_HOST hget ${kvgroup} ${getel})
-  done
+   kvgroup=$(_jq '.keystore.group')
 
+   # Copy Templatefile to Target
+   cp -f ${template} ${target}
+
+   # Edit Templatefile and Set VAR_NAME on Placeholder
+   for set in $setLIST; do
+     if [ "${!set}" = "" ]; then
+       if [ ! -z ${REDIS_HOST} ]; then
+         warn "ENV '$set' not set - try get ENV from keystore ${REDIS_HOST} ${kvgroup} "
+         export ${set}=$(clireds ${REDIS_HOST} hget ${kvgroup} ${set})
+       fi
+     fi
+
+     if [ "${!set}" = "" ] || [ "${!set}" = "null" ]; then
+       error "NO VALUE for $set"
+       exit 1;
+     fi
+       strReplace "${set}" "${!set}" "${target}"
+   done
 done

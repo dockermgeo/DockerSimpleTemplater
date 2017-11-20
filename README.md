@@ -65,7 +65,7 @@ More Info to [DockerBootstrap](https://github.com/dockermgeo/DockerBootstrap).
 
 #### Snipplet from a Dockerfile
 ```
-RUN apt-get update && apt-get install -qj jq git && cd /tmp && \
+RUN apt-get update && apt-get install -qy git jq && cd /tmp && \
     git clone https://github.com/dockermgeo/DockerSimpleTemplater && \
     cd DockerSimpleTemplater && make install 
 

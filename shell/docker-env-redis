@@ -13,8 +13,8 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    kvgroup=$(_jq '.keystore.group')
 
    # Copy Templatefile to Target
-   DIR=$(dirname ${target})
-   mkdir -p $dirname
+   DDIR=$(dirname ${target})
+   mkdir -p ${DDIR}
    cp -f ${template} ${target}
 
    # Edit Templatefile and Set VAR_NAME on Placeholder

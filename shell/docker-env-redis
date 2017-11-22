@@ -13,6 +13,8 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    kvgroup=$(_jq '.keystore.group')
 
    # Copy Templatefile to Target
+   DIR=$(dirname ${target})
+   mkdir -p $dirname
    cp -f ${template} ${target}
 
    # Edit Templatefile and Set VAR_NAME on Placeholder
@@ -20,7 +22,7 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
      if [ "${!set}" = "" ]; then
        if [ ! -z ${REDIS_HOST} ]; then
          debug "ENV '$set' not set - try get ENV from keystore ${REDIS_HOST} ${kvgroup} "
-         export ${set}=$(clireds ${REDIS_HOST} hget ${kvgroup} ${set})
+         export ${set}="$(clireds ${REDIS_HOST} hget ${kvgroup} ${set})"
        fi
      fi
 

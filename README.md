@@ -86,5 +86,19 @@ RUN apt-get update && apt-get install -qy git jq && cd /tmp && \
 COPY src/app_template.json /template.json
 ```
 
-### Special Redis
+### Using Redis Keystore
 A RedisDB-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".
+
+#### Example
+Given are from JSON
+  - keygroup=de.env.service.hellohttp
+  - superkey=group+(hostname)
+
+At first round **docker-simple-keystoretemplater** will ask for
+```
+de.env.service.hellohttp{"LOG_LEVEL":"INFO"}
+```
+before asking for
+```
+de.env.service.hellohttp.Pluto{"LOG_LEVEL":"DEBUG"}
+```

@@ -17,12 +17,20 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    mkdir -p ${DDIR}
    cp -f ${template} ${target}
 
+   # Supergroup
+   kvsuper="${kvgroup}.$(hostname)"
+
    # Edit Templatefile and Set VAR_NAME on Placeholder
    for set in $setLIST; do
      if [ "${!set}" = "" ]; then
        if [ ! -z ${REDIS_HOST} ]; then
          debug "ENV '$set' not set - try get ENV from keystore ${REDIS_HOST} ${kvgroup} "
-         export ${set}="$(clireds ${REDIS_HOST} hget ${kvgroup} ${set})"
+         superv=$(clireds ${REDIS_HOST} hget ${kvsuper} ${set})
+         if [  "${superv}" = "null" ] && [  "${superv}" = "" ]; then
+            export ${set}="$(clireds ${REDIS_HOST} hget ${kvgroup} ${set})"
+         else
+            export ${set}="${superv}"
+         fi
        fi
      fi
 

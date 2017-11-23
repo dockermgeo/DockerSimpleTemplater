@@ -12,14 +12,15 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    setLIST=$(_jq '.set[]')
    kvgroup=$(_jq '.keystore.group')
    superkey_command=$(_jq '.keystore.superkey_command')
+   if [  "${superkey_command}" = "null" ] && [  "${superkey_command}" = "" ]; then
+     superkey_command="hostname"
+   fi
+   kvsuper="${kvgroup}.$(${superkey_command})"
 
    # Copy Templatefile to Target
    DDIR=$(dirname ${target})
    mkdir -p ${DDIR}
    cp -f ${template} ${target}
-
-   # Supergroup
-   kvsuper="${kvgroup}.$(${superkey_command})"
 
    # Edit Templatefile and Set VAR_NAME on Placeholder
    for set in $setLIST; do

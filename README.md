@@ -126,4 +126,4 @@ de.env.service.hellohttp.V10003{"LOG_LEVEL":"DEBUG"}
 ## And the future ...
 
 Docker is recommend redis but many users using [vault](https://www.vaultproject.io/docs/commands/read-write.html).
-That's will be a good idea for another Connector as [CliReds](https://github.com/dockermgeo/CliReds)
+That's will be a good idea for another Connector as [CliReds](https://github.com/dockermgeo/CliReds).

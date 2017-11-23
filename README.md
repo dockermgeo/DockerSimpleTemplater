@@ -112,10 +112,13 @@ Ask on specialtime the keystore. The build is a good point of time.
 de.build.service.hellohttp{"LOG_LEVEL":"ERROR"}
 ```
 
-Set special's for Releases
+Set special SETS for Releases
 ```
-de.env.service.hellohttp.V10002{"TITLE":"Welcome!"}
+de.env.service.hellohttp{"TITLE":"Welcome!"}
+de.env.service.hellohttp{"LOG_LEVEL":"ERROR"}
 de.env.service.hellohttp.V10002{"CMD":"java -jar exampler_V10002.jar"}
+de.env.service.hellohttp.V10002{"LOG_LEVEL":"INFO"}
 de.env.service.hellohttp.V10003{"TITLE":"Welcome - It is a new Relase!"}
 de.env.service.hellohttp.V10003{"CMD":"java -jar exampler_V10003.jar"}
+de.env.service.hellohttp.V10003{"LOG_LEVEL":"DEBUG"}
 ```

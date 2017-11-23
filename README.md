@@ -106,7 +106,7 @@ de.env.service.hellohttp{"LOG_LEVEL":"INFO"}
 ```
 It's a simple fallbacklogic.
 
-#### Other Iedas
+#### Other Ideas
 Ask on specialtime the keystore. The build is a good point of time.
 ```
 de.build.service.hellohttp{"LOG_LEVEL":"ERROR"}

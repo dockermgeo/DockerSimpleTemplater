@@ -96,11 +96,11 @@ Given are from JSON
   - keygroup=de.env.service.hellohttp
   - superkey=group+(hostname)
 
-At first round **docker-simple-keystoretemplater** will ask for
-```
-de.env.service.hellohttp{"LOG_LEVEL":"INFO"}
-```
-before asking for
+At first round **docker-simple-keystoretemplater** will ask the *superkey*
 ```
 de.env.service.hellohttp.Pluto{"LOG_LEVEL":"DEBUG"}
+```
+before asking for *keygroup*
+```
+de.env.service.hellohttp{"LOG_LEVEL":"INFO"}
 ```

@@ -87,9 +87,11 @@ COPY src/app_template.json /template.json
 ```
 
 ### Using Redis Keystore
+
+#### Redis-DB System
 A RedisDB-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".
 
-#### Example
+#### Bring data into your keystore
 Given are from JSON
   - keygroup=de.env.service.hellohttp
   - superkey=group+(hostname)

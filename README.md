@@ -96,7 +96,7 @@ Given are from JSON
   - keygroup=de.env.service.hellohttp
   - superkey=group+(hostname)
 
-At first round **docker-simple-keystoretemplater** will ask the *superkey*
+At first round **docker-simple-keystoretemplater** will ask for *superkey*
 ```
 de.env.service.hellohttp.Pluto{"LOG_LEVEL":"DEBUG"}
 ```

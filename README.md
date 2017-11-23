@@ -55,7 +55,7 @@ JSON
 - **template**: Templatefile
 - **target**: Destination, in which Templatefile will copy and replaced all variables from set.
 
-#### Objekt for accessing keystore ***docker-simple-keystoretemplater***
+#### Objekt for accessing keystore for ***docker-simple-keystoretemplater***
 - **group**: Group, Name or ID as PREFIX before variablename ("group.varname"). Depends by keystores!
 - **superkey_command**: Command, who specify a Subgroup of group. Example: hostname
 

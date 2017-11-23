@@ -6,7 +6,8 @@
       "ENV_LASTNAME", "ENV_FIRSTNAME"
     ],
     "keystore": {
-      "group": "de.cloud.key_value_group_id"
+      "group": "de.cloud.key_value_group_id",
+      "superkey_command": "hostname"
     }
   }
 ]

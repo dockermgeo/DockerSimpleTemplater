@@ -11,6 +11,7 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    target=$(_jq '.target')
    setLIST=$(_jq '.set[]')
    kvgroup=$(_jq '.keystore.group')
+   superkey_command=$(_jq '.keystore.superkey_command')
 
    # Copy Templatefile to Target
    DDIR=$(dirname ${target})
@@ -18,7 +19,7 @@ for row in $(cat "${F_JSON}" | jq -r '.[] | @base64'); do
    cp -f ${template} ${target}
 
    # Supergroup
-   kvsuper="${kvgroup}.$(hostname)"
+   kvsuper="${kvgroup}.$(${superkey_command})"
 
    # Edit Templatefile and Set VAR_NAME on Placeholder
    for set in $setLIST; do

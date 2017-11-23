@@ -122,3 +122,8 @@ de.env.service.hellohttp.V10003{"TITLE":"Welcome - It is a new Relase!"}
 de.env.service.hellohttp.V10003{"CMD":"java -jar exampler_V10003.jar"}
 de.env.service.hellohttp.V10003{"LOG_LEVEL":"DEBUG"}
 ```
+
+## And the future ...
+
+Docker is recommend redis but many users using [vault](https://www.vaultproject.io/docs/commands/read-write.html).
+That's will be a good idea for another Connector as [CliReds](https://github.com/dockermgeo/CliReds)

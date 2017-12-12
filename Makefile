@@ -8,8 +8,9 @@ DIR_DOWNLOAD=$(DIR_PWD)/src/download
 DIR_BUILD=/tmp
 
 install: download.vault download.clireds
-	cp -Rfv $(DIR_PWD)/src/scripts/lib /usr/local/lib/cliks
-	cp -fv $(DIR_PWD)/src/scripts/* /usr/local/bin/
+	cp -Rfv $(DIR_PWD)/src/sources/cliks /usr/local/lib/
+	cp -fv $(DIR_PWD)/src/sources/cliks/cliks /usr/local/lib/
+	cp -fv $(DIR_PWD)/src/sources/simpletemplater/* /usr/local/bin/
 	chmod a+x /usr/local/lib/cliks/*
 	chmod a+x /usr/local/bin/*
 

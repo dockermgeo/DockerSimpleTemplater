@@ -89,8 +89,9 @@ COPY src/app_template.json /template.json
 ### Processing with Keystores
 
 #### Keystoresystems
-A RedisKeystore-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".
-A Vault-Dockerimage you'll find on Dockerhub "[dockermgeo/vaultserver](https://hub.docker.com/r/dockermgeo/vaultserver/)".
+I build two Dockerimages for testing this concept. Both are on Dockerhub:
+- **Redis**: [dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)
+- **Vault**: [dockermgeo/vaultserver](https://hub.docker.com/r/dockermgeo/vaultserver/)
 
 #### Bring data into your keystore
 Given are from JSON

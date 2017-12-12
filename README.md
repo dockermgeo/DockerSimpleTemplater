@@ -126,6 +126,8 @@ de.env.service.hellohttp.V10003{"LOG_LEVEL":"DEBUG"}
 
 ## Cliks Tool for redis or vault
 If you're using this Project with keystore, it's doesn't mattern if vault or redis.
+Cliks will control it for you automaticly. Cliks using [vault](https://www.vaultproject.io/docs/commands/read-write.html) and a another Redis-Connector as [CliReds](https://github.com/dockermgeo/CliReds).
+
 In case, we are using cliks (ClientKeystore) who are switching between by Address.
 
 ```

@@ -90,8 +90,8 @@ COPY src/app_template.json /template.json
 
 #### Keystoresystems
 I build two Dockerimages for testing this concept. Both are on Dockerhub:
-- **Redis**: [dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)
-- **Vault**: [dockermgeo/vaultserver](https://hub.docker.com/r/dockermgeo/vaultserver/)
+- **Redis**: [dockermgeo/redis_server](https://hub.docker.com/r/dockermgeo/redis_server/)
+- **Vault**: [dockermgeo/vault_server](https://hub.docker.com/r/dockermgeo/vault_server/)
 
 #### Bring data into your keystore
 Given are from JSON
@@ -135,7 +135,7 @@ In case, we are using cliks (ClientKeystore) who are switching between by Addres
 cliks set de.env.service.hellohttp.V10003 LOG_LEVEL DEBUG
 ```
 
-### Configuration Keystore 
+### Configuration Keystore
 
 #### Vault
 ```

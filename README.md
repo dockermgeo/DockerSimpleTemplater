@@ -125,9 +125,9 @@ de.env.service.hellohttp.V10003{"CMD":"java -jar exampler_V10003.jar"}
 de.env.service.hellohttp.V10003{"LOG_LEVEL":"DEBUG"}
 ```
 
-## Cliks Tool for redis or vault
-If you're using this Project with keystore, it's doesn't mattern if vault or redis.
-Cliks will control it for you automaticly. Cliks using [vault](https://www.vaultproject.io/docs/commands/read-write.html) and a another Redis-Connector as [CliReds](https://github.com/dockermgeo/CliReds).
+## Handling keystores width Cliks
+In this Project, **docker-simple-keystoretemplater** using Cliks. *If're using Cliks, it's doesn't mattern if vault or redis. Cliks will control it for you automaticly.*
+Cliks using a another Redis-Connector named [CliReds](https://github.com/dockermgeo/CliReds) and  [vault](https://www.vaultproject.io/docs/commands/read-write.html).
 
 In case, we are using cliks (ClientKeystore) who are switching between by Address.
 
@@ -135,7 +135,7 @@ In case, we are using cliks (ClientKeystore) who are switching between by Addres
 cliks set de.env.service.hellohttp.V10003 LOG_LEVEL DEBUG
 ```
 
-### Configuration
+### Configuration Keystore 
 
 #### Vault
 ```

@@ -89,7 +89,7 @@ COPY src/app_template.json /template.json
 ### Processing with Keystores
 
 #### Keystoresystems
-I build two Dockerimages for testing this concept. Both are on Dockerhub:
+I build two Dockerimages for testing this concept. Both are on Dockerhub/docker.io:
 - **Redis**: [dockermgeo/redis_server](https://hub.docker.com/r/dockermgeo/redis_server/)
 - **Vault**: [dockermgeo/vault_server](https://hub.docker.com/r/dockermgeo/vault_server/)
 

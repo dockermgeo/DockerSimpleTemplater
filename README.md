@@ -86,10 +86,11 @@ RUN apt-get update && apt-get install -qy git jq && cd /tmp && \
 COPY src/app_template.json /template.json
 ```
 
-### Using Redis Keystore
+### Processing with Keystores
 
-#### Redis-DB System
-A RedisDB-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".
+#### Keystoresystems
+A RedisKeystore-Dockerimage you'll find on Dockerhub "[dockermgeo/redisdb](https://hub.docker.com/r/dockermgeo/redisdb/)".
+A Vault-Dockerimage you'll find on Dockerhub "[dockermgeo/vaultserver](https://hub.docker.com/r/dockermgeo/vaultserver/)".
 
 #### Bring data into your keystore
 Given are from JSON
@@ -123,7 +124,26 @@ de.env.service.hellohttp.V10003{"CMD":"java -jar exampler_V10003.jar"}
 de.env.service.hellohttp.V10003{"LOG_LEVEL":"DEBUG"}
 ```
 
-## And the future ...
+## Cliks Tool for redis or vault
+If you're using this Project with keystore, it's doesn't mattern if vault or redis.
+In case, we are using cliks (ClientKeystore) who are switching between by Address.
 
-Docker is recommend redis but many users using [vault](https://www.vaultproject.io/docs/commands/read-write.html).
-That's will be a good idea for another Connector as [CliReds](https://github.com/dockermgeo/CliReds).
+```
+cliks set de.env.service.hellohttp.V10003 LOG_LEVEL DEBUG
+```
+
+### Configuration
+
+#### Vault
+```
+Environment:
+  - VAULT_ADDR=http://0.0.0.0:8200
+  - VAULT_TOKEN=token123
+```
+
+#### Redis
+```
+Environment:
+  - REDIS_ADDR=http://myredishost:6379
+  - REDIS_PASSWORD=redispw123
+```

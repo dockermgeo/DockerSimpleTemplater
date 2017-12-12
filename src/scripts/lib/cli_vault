@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# params
+_CMD_=$(echo $1 | tr /a-z/ /A-Z/)
+_KEY_=$2
+_VALUE_="$3"
+
+# functions
+login(){
+  vault auth ${VAULT_ADDR} ${VAULT_TOKEN} >>/dev/null
+}
+
+getkey(){
+  vault read -address=${VAULT_ADDR} -field=value secret/$1
+}
+
+setkey(){
+  vault write -address=${VAULT_ADDR} "secret/$1" value="$2" >>/dev/null
+  echo "Secret $1 stored!"
+}
+
+# run,execute
+login
+if [ "$_CMD_" = "GET" ]; then
+  getkey $_KEY_
+elif [ "$_CMD_" = "SET" ]; then
+  setkey $_KEY_ "$_VALUE_"
+fi

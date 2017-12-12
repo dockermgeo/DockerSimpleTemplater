@@ -1,0 +1,12 @@
+#!/bin/sh
+
+replace () {
+                sed -E "s#%%${1}%%#${2}#g" -i ${3} || :
+}
+
+##
+str_find=${1}
+str_repl=${2}
+file_replace=${3}
+##
+replace "${str_find}" "${str_repl}" "${file_replace}"

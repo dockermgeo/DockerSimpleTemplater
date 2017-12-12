@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# ENV REDIS_PASSWORD, REDIS_HOST, REIDS_PORT:6379,LOG_LEVEL
+
+# params
+_CMD_=$(echo $1 | tr /a-z/ /A-Z/)
+_KEY_=$2
+_DOMAIN_="$3"
+_VALUE_="$4"
+####
+
+# functions
+getkey(){
+  clireds ${REDIS_HOST} hget "$1" "$2"
+}
+
+setkey(){
+  clireds ${REDIS_HOST} hset "$1" "$2" "$3"
+}
+
+if [ ! -z ${REDIS_ADDR} ]; then
+  _REDIS_HTTP=$(echo ${REDIS_ADDR} | cut -d ':' -f1-2)
+
+  _REDIS_HOST=$(echo ${_REDIS_HTTP} | cut -d '/' -f2)
+  if [ "${_REDIS_HOST}" != "" ]; then
+    export REDIS_HOST=${_REDIS_HOST}
+  fi
+
+  _REDIS_PORT=$(echo ${REDIS_ADDR} | cut -d ':' -f3)
+  if [ "${_REDIS_PORT}" != "" ]; then
+    export REDIS_PORT=${_REDIS_PORT}
+  fi
+fi
+
+# run,execute
+if [ "$_CMD_" = "GET" ]; then
+  getkey $_DOMAIN_ $_KEY_
+elif [ "$_CMD_" = "SET" ]; then
+  setkey $_DOMAIN_ $_KEY_  "$_VALUE_"
+fi

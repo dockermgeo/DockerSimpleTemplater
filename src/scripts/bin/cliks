@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+# params
+_CMD_=$(echo $1 | tr /a-z/ /A-Z/)
+_DOMAIN_="$2"
+_KEY_="$3"
+_VALUE_="$4"
+path_libcliks=/usr/local/lib/cliks
+
+if [ "$_CMD_" = "help" ]; then
+  echo "* ENV-VAULT:"
+  echo -e "\t- VAULT_ADDR"
+  echo -e "\t- VAULT_TOKEN"
+  echo "* ENV-REDIS:"
+  echo -e "\t- REDIS_ADDR"
+  echo -e "\t- REDIS_PASSWORD"
+  exit 0;
+fi
+
+if [ -z ${VAULT_ADDR} ]; then
+  # REDIS
+  mybin=${path_libcliks}/cli_redis
+  # run,execute
+  ${mybin} ${_CMD_} ${_KEY_} ${_DOMAIN_} ${_VALUE_}
+else
+  # VAULT
+  mybin=${path_libcliks}/cli_vault
+  # run,execute
+  ${mybin} ${_CMD_} ${_DOMAIN_}.${_KEY_} ${_VALUE_}
+fi

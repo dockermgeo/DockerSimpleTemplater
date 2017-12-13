@@ -41,8 +41,8 @@ JSON
    "target":"/usr/share/nginx/html/index.html",
    "set":[ "ENV_FIRSTNAME", "ENV_LASTNAME", "ENV_STREET", "DB_ADDRESS" ],
    "keystore":{
-     "keyqualifier": "de.cloud.key_value_group_id",
-     "group": "de.cloud.key_value_group_id",
+     "keyqualifier": "de.cloud.application.helloworld",
+     "group": "web",
      "superkey_command": "hostname"
    }
   },

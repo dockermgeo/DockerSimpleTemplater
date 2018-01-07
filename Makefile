@@ -18,9 +18,9 @@ install.run:
 	chmod a+x /usr/local/lib/cliks/*
 	chmod a+x /usr/local/bin/*
 
-install.rpi: install.run download.vault.rpi download.clireds.rpi
+install.rpi: download.vault.rpi download.clireds.rpi install.run 
 
-install.linux: install.run download.vault.linux download.clireds.linux
+install.linux: download.vault.linux download.clireds.linux install.run
 
 
 download.clireds.linux: prepare

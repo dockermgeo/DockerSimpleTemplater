@@ -34,7 +34,7 @@ download.clireds.linux: prepare
 
 download.vault.linux: prepare
 	curl -O https://releases.hashicorp.com/vault/$(VAULT_VERSION)/vault_$(VAULT_VERSION)_linux_amd64.zip
-	unzip vault_0.9.0_linux_amd64.zip
+	unzip vault_$(VAULT_VERSION)_linux_amd64.zip
 	mv vault $(DIR_DOWNLOAD)/vault
 	chmod a+x $(DIR_DOWNLOAD)/vault
 	rm -f vault_$(VAULT_VERSION)_linux_amd64.zip
@@ -48,7 +48,7 @@ download.clireds.rpi: prepare
 
 download.vault.rpi: prepare
 	curl -O https://releases.hashicorp.com/vault/$(VAULT_VERSION)/vault_$(VAULT_VERSION)_linux_arm.zip
-	unzip vault_0.9.0_linux_amd64.zip
+	unzip vault_$(VAULT_VERSION)_linux_arm.zip
 	mv vault $(DIR_DOWNLOAD)/vault
 	chmod a+x $(DIR_DOWNLOAD)/vault
 	rm -f vault_$(VAULT_VERSION)_linux_arm.zip

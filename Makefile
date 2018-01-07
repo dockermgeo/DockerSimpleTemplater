@@ -7,7 +7,10 @@ DIR_SRC=$(DIR_PWD)/src
 DIR_DOWNLOAD=$(DIR_PWD)/src/download
 VAULT_VERSION=0.9.0
 
-install: download.vault download.clireds
+install:
+	@echo "usage: [install.linux, install.rpi]"
+
+install.run:
 	cp -Rfv $(DIR_SRC)/sources/cliks /usr/local/lib/
 	cp -fv $(DIR_SRC)/sources/cliks/cliks /usr/local/bin/
 	cp -fv $(DIR_SRC)/sources/simpletemplater/* /usr/local/bin/
@@ -15,18 +18,37 @@ install: download.vault download.clireds
 	chmod a+x /usr/local/lib/cliks/*
 	chmod a+x /usr/local/bin/*
 
-download.clireds: prepare
+install.rpi: install.run download.vault.rpi download.clireds.rpi
+
+install.linux: install.run download.vault.linux download.clireds.linux
+
+
+download.clireds.linux: prepare
 	git clone https://github.com/dockermgeo/CliReds
 	mv CliReds/builds/clireds-Linux $(DIR_DOWNLOAD)/clireds
 	chmod a+x $(DIR_DOWNLOAD)/clireds
 	rm -Rf CliReds
 
-download.vault: prepare
+download.vault.linux: prepare
 	curl -O https://releases.hashicorp.com/vault/$(VAULT_VERSION)/vault_$(VAULT_VERSION)_linux_amd64.zip
 	unzip vault_0.9.0_linux_amd64.zip
 	mv vault $(DIR_DOWNLOAD)/vault
 	chmod a+x $(DIR_DOWNLOAD)/vault
-	rm -f vault_0.9.0_linux_amd64.zip
+	rm -f vault_$(VAULT_VERSION)_linux_amd64.zip
+
+
+download.clireds.rpi: prepare
+	git clone https://github.com/dockermgeo/CliReds
+	mv CliReds/builds/clireds-Linux $(DIR_DOWNLOAD)/clireds
+	chmod a+x $(DIR_DOWNLOAD)/clireds
+	rm -Rf CliReds
+
+download.vault.rpi: prepare
+	curl -O https://releases.hashicorp.com/vault/$(VAULT_VERSION)/vault_$(VAULT_VERSION)_linux_arm.zip
+	unzip vault_0.9.0_linux_amd64.zip
+	mv vault $(DIR_DOWNLOAD)/vault
+	chmod a+x $(DIR_DOWNLOAD)/vault
+	rm -f vault_$(VAULT_VERSION)_linux_arm.zip
 
 prepare:
 	mkdir -p $(DIR_DOWNLOAD)

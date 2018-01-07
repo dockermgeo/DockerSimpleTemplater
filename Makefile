@@ -18,11 +18,14 @@ install.run:
 	chmod a+x /usr/local/lib/cliks/*
 	chmod a+x /usr/local/bin/*
 
-install.rpi: download.vault.rpi download.clireds.rpi install.run 
+install.rpi: download.vault.rpi download.clireds.rpi install.run
 
 install.linux: download.vault.linux download.clireds.linux install.run
 
+#
+# DOWNLOADS
 
+# LINUX
 download.clireds.linux: prepare
 	git clone https://github.com/dockermgeo/CliReds
 	mv CliReds/builds/clireds-Linux $(DIR_DOWNLOAD)/clireds
@@ -36,7 +39,7 @@ download.vault.linux: prepare
 	chmod a+x $(DIR_DOWNLOAD)/vault
 	rm -f vault_$(VAULT_VERSION)_linux_amd64.zip
 
-
+# ARM
 download.clireds.rpi: prepare
 	git clone https://github.com/dockermgeo/CliReds
 	mv CliReds/builds/clireds-Linux $(DIR_DOWNLOAD)/clireds
